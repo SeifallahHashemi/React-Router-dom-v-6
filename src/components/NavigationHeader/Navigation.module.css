@@ -1,0 +1,13 @@
+.navigation {
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    overflow: hidden;
+    height: min(10vh, 8rem);
+    background-color: hsl(350, 95%, 98%);
+    border-bottom: .1rem solid hsl(10, 10%, 80%);
+    box-shadow: 0rem -0.6rem 3.5rem -0.7rem hsl(10, 5%, 10%);
+    padding-inline: .5rem 1.5rem;
+}

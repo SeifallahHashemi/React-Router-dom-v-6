@@ -1,0 +1,17 @@
+.navigationMenu ul {
+    display: flex;
+    gap: 1rem;
+}
+.navigationMenu ul li a {
+    font-size: clamp(1rem, 1.25vw, 1.4rem);
+    transition: color 150ms ease;
+}
+.navigationMenu ul li a:where(:hover, :active) {
+    color: hsl(50, 82%, 50%);
+}
+.active {
+    color: hsl(325, 90%, 61%);
+}
+.inActive {
+    color: hsl(250, 10%, 25%);
+}

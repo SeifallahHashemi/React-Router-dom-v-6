@@ -1,0 +1,75 @@
+.bookDetails__form {
+    width: min(100%, 40rem);
+    margin-inline: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1.5rem;
+}
+.bookDetails__form--title {
+    position: relative;
+}
+.bookDetails__form--title label {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    translate: 0 -50%;
+    font-size: 1.5rem;
+    color: hsl(0, 3%, 88%);
+    transition: all .5s ease;
+    pointer-events: none;
+}
+.bookDetails__form--title input {
+    border: none;
+    border-bottom: .1rem solid hsl(0, 3%, 88%);
+    outline: none;
+    padding-block: .5rem;
+    padding-inline-start: .7rem;
+    width: min(50vw, 50%);
+    font-size: 1.3rem;
+}
+.bookDetails__form--title input:where(:-webkit-autofill, :-webkit-autofill:hover, :-webkit-autofill:focus, :-webkit-autofill:active) {
+    /* -webkit-box-shadow: 0 0 0 30px white inset !important; */
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    /* -webkit-text-fill-color: yellow !important; */
+}
+.bookDetails__form--title.active label {
+    top: -30%;
+    translate: 0;
+    font-size: 1rem;
+    color: hsl(0, 10%, 10%);
+}
+.bookDetails__form--title.active input {
+    border-bottom-color: hsl(0, 0%, 29%);
+}
+.bookDetails__form--comment textarea{
+    resize: none;
+    border: none;
+    outline: none;
+    font-family: "Vazir", sans-serif;
+    background-color: hsl(171, 16%, 82%);
+    border-radius: 1rem;
+    padding: 1rem 1rem 0 0;
+    font-size: .8rem;
+    max-width: 60vw;
+    max-height: 50vh;
+}
+.bookDetails__form--comment textarea::placeholder {
+    font-family: "Vazir", sans-serif;
+}
+.bookDetails__form--button {
+    margin-inline-end: 2rem;
+    align-self: flex-end;
+    border: none;
+    outline: none;
+    padding: .75rem 2rem;
+    background-color: hsl(171, 16%, 82%);
+    font-family: inherit;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all .4s ease;
+    border-radius: .3rem;
+}
+.bookDetails__form--button:where(:hover, :active) {
+    background-color: hsla(171, 16%, 82% , .5);
+    color: hsl(360, 25%, 50%);
+}

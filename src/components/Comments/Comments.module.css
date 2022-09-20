@@ -1,0 +1,10 @@
+.comments {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 3rem;
+}
+.notification {
+    text-align: center;
+    color: hsl(133, 45%, 56%);
+    font-size: 1.1rem;
+}
