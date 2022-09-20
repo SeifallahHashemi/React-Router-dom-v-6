@@ -16,3 +16,21 @@
 .comment span:last-child {
     font-size: 1.1rem;
 }
+.comment__button {
+    align-self: flex-end;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: .65em;
+    width: 20em;
+    height: 4em;
+    border: .1rem solid hsl(205, 100%, 76%);
+    border-radius: 1em;
+    overflow: hidden;
+    transition: all .3s ease;
+}
+.comment__button:where(:hover, :focus, :focus-within, :focus-visible) {
+    background-color: hsl(205, 100%, 76%);
+}

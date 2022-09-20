@@ -13,6 +13,7 @@ const BooksList = (props) => {
       </div>
       <div className={classes.link}>
         <Link to={`post/${props.id}`}>ادامه مطلب</Link>
+        {/* <Link to={`post/${props.id}/`}>ادامه مطلب</Link> */}
       </div>
     </li>
   )

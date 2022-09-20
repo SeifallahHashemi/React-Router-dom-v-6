@@ -41,7 +41,7 @@ const NewComment = (props) => {
       return;
 
     sendRequest({
-      commentData: { title: enteredTitle, comment: enteredComment },
+      commentData: { title: enteredTitle, comment: enteredComment, date: new Date() },
       postId: postId,
     });
     titleRef.current.value = '';

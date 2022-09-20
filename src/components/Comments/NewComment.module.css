@@ -26,6 +26,7 @@
     padding-inline-start: .7rem;
     width: min(50vw, 50%);
     font-size: 1.3rem;
+    font-family: inherit;
 }
 .bookDetails__form--title input:where(:-webkit-autofill, :-webkit-autofill:hover, :-webkit-autofill:focus, :-webkit-autofill:active) {
     /* -webkit-box-shadow: 0 0 0 30px white inset !important; */
