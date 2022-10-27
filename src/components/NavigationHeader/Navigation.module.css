@@ -9,5 +9,19 @@
     background-color: hsl(350, 95%, 98%);
     border-bottom: .1rem solid hsl(10, 10%, 80%);
     box-shadow: 0rem -0.6rem 3.5rem -0.7rem hsl(10, 5%, 10%);
-    padding-inline: .5rem 1.5rem;
+    padding-inline: 5vw;
+}
+.navigation ul button,
+.navigation ul button:where(:active, :focus, :focus-visible, :focus-visible) {
+    width: 3.5rem;
+    background-color: hsl(330, 8%, 5%);
+    color: hsl(350, 95%, 98%);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: .5rem;
+    padding-block: .5em;
+}
+.navigation ul button:hover {
+    color: hsl(180, 64%, 71%);
 }

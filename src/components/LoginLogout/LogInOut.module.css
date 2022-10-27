@@ -1,0 +1,306 @@
+.form__container {
+  width: 100%;
+  height: 90vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 100px 1fr 140px;
+  perspective: 1000px;
+}
+.form {
+  grid-column: 8 / span 2;
+  grid-row: 2 / 3;
+  background-color: hsl(129, 50%, 82%);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 3rem;
+  border-radius: 2rem;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+/* .form > * {
+    
+} */
+.form--login {
+  z-index: 3;
+  background-color: hsl(264, 14%, 93%);
+  color: var(--fc-green);
+}
+.form--logout {
+  z-index: 2;
+  background-color: rgb(54, 179, 217);
+  /* rotate: z 0.0521rad; */
+  /* translate: 0 0 1em; */
+}
+.buttonContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.75rem;
+}
+.userInput,
+.userInputContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.userInput {
+  flex-direction: row;
+  gap: 0.3rem;
+  position: relative;
+}
+.userInput input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 0.1rem solid hsl(0, 50%, 5%);
+  border-bottom-color: var(--fc-green);
+  color: var(--fc-darkBlue);
+  translate: 1.4rem -0.25rem;
+  padding-inline-start: 1.4rem;
+  height: 2rem;
+  width: 100%;
+}
+.userInput input::placeholder {
+  color: var(--fc-green);
+}
+.userInput svg {
+  font-size: 1.3rem;
+  z-index: 10;
+}
+.userInput span {
+  position: absolute;
+  left: 1.4rem;
+  top: 0;
+  z-index: 10;
+  overflow: hidden;
+  height: 100%;
+  /* transform-origin: top; */
+}
+.userInput span svg {
+  cursor: pointer;
+}
+
+.userInput span:first-of-type svg {
+  z-index: 4;
+}
+.userInput span:last-of-type svg {
+  z-index: 3;
+}
+.userInput--signUp {
+  --fc-green: hsl(5, 5%, 15%);
+  --fc-darkBlue: hsl(255, 79%, 35%);
+  --fc-white: hsl(60, 39%, 80%);
+}
+.userInput--signUp input {
+  border-bottom-color: var(--fc-white);
+}
+.userInput--signUp input::placeholder {
+  color: var(--fc-darkBlue);
+  filter: opacity(0.5);
+}
+.userInput--signUp svg {
+  z-index: 20;
+  fill: var(--fc-white);
+  stroke: var(--fc-white);
+}
+.form:nth-of-type(2) h2 {
+  color: hsl(50, 5%, 90%);
+}
+.form:nth-of-type(2) .buttonContainer {
+  --fc-green: hsl(0, 0%, 100%);
+}
+.form:nth-of-type(2) .btn--submit:where(:active) {
+  color: hsl(0, 50%, 5%);
+}
+.animationOne {
+  animation: showAnimate 300ms ease 1 forwards;
+}
+.animationTwo {
+  animation: hideAnimate 300ms ease 1 forwards;
+}
+/* btn */
+.btn {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 10rem;
+  padding-block: 0.5rem;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+.btn--submit {
+  background-color: var(--fc-green);
+  color: var(--fc-darkBlue);
+}
+.btn--submit:where(:hover, :active) {
+  box-shadow: 0px 5px 15px var(--fc-green);
+}
+.btn--submit:where(:active) {
+  box-shadow: 0px 5px 15px var(--fc-green),
+    inset 1px 1px 28px -9px var(--fc-darkBlue);
+  color: #eceaef;
+}
+.btn--toggleState {
+  text-decoration: underline;
+  color: var(--fc-darkBlue);
+}
+.btn--toggleState:where(:active) {
+  font-size: 1.05rem;
+  color: hsl(245, 52%, 55%);
+}
+.switchState {
+  animation: switchState 3000ms ease 0ms 1 forwards;
+}
+.switchStateTwo {
+  animation: switchStateTwo 3000ms ease 0ms 1 forwards;
+}
+.illustrationContainer {
+  grid-column: 1 / span 6;
+  grid-row: 2 / 3;
+  background: url("../../img/Asset.svg");
+  /* background-size: 500px 600px; */
+  background-repeat: no-repeat;
+}
+.notification {
+  position: fixed;
+  top: 0vh;
+  right: 2.5vw;
+  min-width: 25vw;
+  max-width: 30vw;
+  min-height: 5rem;
+  border-radius: 1rem;
+  background-color: hsl(213, 5%, 97%);
+  box-shadow: 0.2rem 0.2rem 0.5rem hsla(0, 50%, 5%, 0.25);
+  overflow: hidden;
+  translate: 150%;
+  transition: all 500ms linear;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.5rem;
+}
+.notification span:first-of-type {
+  color: hsl(0, 50%, 50%);
+}
+.notification span:nth-of-type(2) {
+  color: hsl(0, 50%, 5%);
+}
+.notificationShow {
+  translate: 0;
+}
+.backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(213, 5%, 97%, .5);
+    backdrop-filter: blur(1px);
+    z-index: 500;
+}
+.loadingSpinner,
+.loadingSpinner:before,
+.loadingSpinner:after {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  animation-fill-mode: both;
+  animation: bblFadInOut 1.8s infinite ease-in-out;
+}
+.loadingSpinner {
+  color: hsl(194, 81%, 56%);
+  font-size: 7px;
+  position: relative;
+  text-indent: -9999em;
+  transform: translateZ(0);
+  animation-delay: -0.16s;
+  translate: 0em 20em;
+  z-index: 100000;
+}
+.loadingSpinner:before,
+.loadingSpinner:after {
+  content: "";
+  position: absolute;
+  top: 0;
+}
+.loadingSpinner:before {
+  left: -3.5em;
+  animation-delay: -0.32s;
+}
+.loadingSpinner:after {
+  left: 3.5em;
+}
+
+/* Animation */
+@keyframes bblFadInOut {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+@keyframes showAnimate {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 100%;
+  }
+}
+@keyframes hideAnimate {
+  0% {
+    max-height: 100%;
+  }
+  100% {
+    max-height: 0;
+  }
+}
+@keyframes switchState {
+  0% {
+    z-index: 4;
+    translate: 0 0 0;
+    rotate: z 0;
+  }
+  40% {
+    translate: 10rem 0 0;
+  }
+  50% {
+    translate: 10rem 0 -1em;
+  }
+  100% {
+    translate: 0 0 -1em;
+    rotate: z -0.0521rad;
+    z-index: 1;
+  }
+}
+@keyframes switchStateTwo {
+  0% {
+    translate: 0 0 -1em;
+  }
+  40% {
+    translate: -10rem 0 -1em;
+  }
+  50% {
+    translate: -10rem 0 0;
+  }
+  100% {
+    translate: 0 0 -1em;
+    z-index: 3;
+    rotate: z 0rad;
+  }
+}
+/* @keyframes hideNotification {
+    0% {
+        translate: -110%;
+    }
+    100% {
+        translate: 0;
+    }
+} */

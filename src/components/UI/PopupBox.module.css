@@ -1,0 +1,21 @@
+.popupBox {
+    position: fixed;
+    top: 0;
+    right: calc((100vw - min(60vw, 20rem)) / 2);
+    width: min(60vw, 20rem);
+    padding-block: 2rem;
+    background-color: hsl(233, 69%, 97%);
+    color: hsl(320, 7%, 16%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5rem;
+    translate: 0 -100%;
+    transition: translate 500ms ease-in-out;
+}
+.popupBox.show {
+    translate: 0 0;
+}
+.popupBox span {
+    color: #f0dd00;
+}

@@ -2,11 +2,18 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: inherit
+}
+:root {
+  --fc-green: #61b4ab;
+  --fc-darkBlue: #3f466c;
+  --black-mode: hsl(330, 8%, 5%);
 }
 ul, li {
   list-style: none;
 }
-a {
+a,
+a:where(:hover, :active, :target, :focus, :focus-visible, :focus-within, :active, :visited) {
   text-decoration: none;
 }
 html {

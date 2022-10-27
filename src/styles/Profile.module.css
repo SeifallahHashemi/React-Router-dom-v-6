@@ -1,0 +1,165 @@
+.profileEdit__form {
+  margin-inline: auto;
+  width: 80%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  gap: 5rem;
+}
+.profileEdit__form > div:not(:has(button)) {
+  align-self: center;
+  width: min(50vw, 20rem);
+  display: grid;
+  gap: 1.5rem;
+}
+.profileEdit__form div label {
+  font-size: 1.1em;
+  color: hsl(276, 46%, 52%);
+}
+.profileEdit__form .avatar {
+    position: relative;
+    border: .15rem solid hsl(276, 46%, 52%);
+    background-color: hwb(291 90% 0% / 0.655);
+  width: min(60vw, 8rem);
+  height: min(60vw, 8rem);
+  border-radius: 50%;
+  place-content: center;
+  place-items: center;
+  gap: 0;
+  overflow: hidden;
+}
+.profileEdit__form .avatar .avatarPic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* z-index: 5; */
+}
+.profileEdit__form .avatar input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: 0;
+}
+.profileEdit__form .avatar label svg {
+    font-size: 3rem;
+    fill: hwb(194 50% 0%);
+}
+.profileEdit__form input:not([type="file"]) {
+  border: none;
+  outline: none;
+  border-bottom: 0.1rem solid hsla(276, 46%, 52%, 0.5);
+  padding-inline-start: 0.25rem;
+  padding-block-end: 0.25rem;
+}
+.profileEdit__form
+  input:is(:focus, :focus-visible, :focus-within, :active, :target),
+.profileEdit__form div label.active {
+  border-bottom-color: hwb(194 0% 0%);
+  color: hwb(194 0% 0%);
+}
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+.profileEdit__button {
+  width: 5rem;
+  background-color: var(--black-mode);
+  color: hsl(350, 95%, 98%);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: .35rem;
+  padding-block: .75em;
+  border: .1rem solid var(--black-mode);
+  transition: background-color 250ms ease, color 250ms linear, scale 250ms linear;
+}
+.profileEdit__button.save {
+  position: relative;
+  pointer-events: all;
+  background-color: transparent;
+  color: var(--black-mode);
+  cursor: pointer;
+  overflow: hidden;
+}
+.profileEdit__button.save::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-mode);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 250ms 300ms ease-in-out;
+}
+.profileEdit__button.save:hover::before {
+  transform-origin: right;
+  transform: scaleX(1);
+  transition: transform 250ms 0ms ease-in-out;
+}
+.profileEdit__button.save span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  z-index: 3;
+  translate: 0px -100%;
+  transition: translate .3s 0s ease-in-out;
+}
+.profileEdit__button.save span svg{
+  font-size: 2rem;
+  fill: hsl(350, 95%, 98%);
+}
+.profileEdit__button.save:hover span {
+  translate: 0px 0px;
+  transition: translate .3s .25s ease-in-out;
+}
+.profileEdit__button.off {
+  pointer-events: none;
+  filter: opacity(.25);
+  cursor: not-allowed;
+}
+.profileEdit__button:hover {
+  background-color: hsla(var(--black-mode), 0);
+  color: var(--black-mode);
+}
+.btnContainer button:not(.save):is(:active) {
+  scale: .94;
+}
+.modalFooter {
+  align-self: flex-end;
+}
+.modalFooter button{
+  width: 4rem;
+  height: 2rem;
+  font-weight: bolder;
+  font-size: 0.9rem;
+  outline: none;
+  border: .09rem solid var(--black-mode);
+  background: transparent;
+  color: var(--black-mode);
+  cursor: pointer;
+  border-radius: .2rem;
+  transition: background .25s ease-out, color .25s ease-out .25s;
+}
+.modalFooter button:hover {
+  background: var(--black-mode);
+  color: hsl(350, 95%, 98%);
+}
